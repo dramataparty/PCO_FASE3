@@ -10,5 +10,17 @@ public class MultipleRewardGame extends AbstractGame{
      */
 
     }
-    
+    void registerPlayScore(List<Integer> eliminated){
+        /* Atualiza a pontuação do jogo com os resultados de uma jogada
+         * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
+         * pontuação igual à fase2
+         */
+    }
+
+    int score() {
+        /* devolve a pontuação atual do jogo */
+    }
+    String toString() {
+        /* representação textual deste jogo, com o score */
+    }
 }
