@@ -1,11 +1,14 @@
-public abstract class AbstractGame {
+public abstract class AbstractGame implements Game {
     /*tem o construtor AbstractGame(int r, int c, int diff, Symbol empty, Symbol[] values, Random gen, Eliminator elim, Accomodator acc)
      *  vai ter área de jogo de r(rows) por c(columns), com diff(iculty) linhas já preenchidas
      *   as linhas do diff vão estar preenchidas com símbolos escolhidos através dos values, gerados pelo gerador "gen"
      *   o jogo vai ter de usar o elim(inator) e o acc(omodator) em todas as jogadas;
      */ 
     
+    @Override
     int linesInGrid(){
+        
+    
 
     }
     int colsInGrid() {
@@ -13,9 +16,12 @@ public abstract class AbstractGame {
     }
 	void permutatePiece(int n){
 
+
     }
     void placePiece(int col) {
-
+        
+        Piece.copy(symbols);    
+        PlayArea.placePiece(l,col);
     }	 
     void generatePiece() {
 
