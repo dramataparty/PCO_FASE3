@@ -55,22 +55,55 @@ public abstract class AbstractGame implements Game {
     }	 
     @Override
     void generatePiece() {
+        /* Generate como? da mesma maneira q a fase 2? */
+        
 
 
     }
     boolean finished(){
+        boolean fin=false;
     /* devolve true se	não	existe	nenhuma	coluna	 onde ainda	caiba uma peça; */
+        for(int i=0;i<c;i++){
+            int open = 0;
+            for(int e=0;e<r;e++){
+                /* 
+                if (#gamegrid[i][e] == EMPTY){
+                    open++;
+                }
+                */
+
+            }
+            if(open<SIZE_OF_PIECE){
+                fin=true;
+
+            }
+        }
+        return fin;
     }
-    int spaceInColumn(int col)	{
+    
+    int spaceInColumn(int col)	{  
+        int open = 0;
+            for(int e=0;e<r;e++){
+                /* 
+                if (#gamegrid[col][e] == EMPTY){
+                    open++;
+                }
+                */
+            }           
+        return fin;
 
 
     } 	 
     String currentPiece(){
-
+        Piece p = new Piece(values);
+        String a = p.toString();
+        return a;
     }
 
     String toString(){
+        return SingleScoreGame.toString;
         /* devolve a representação textual deste jogo; */
+
 
     } 
 
