@@ -8,16 +8,18 @@ public abstract class AbstractGame implements Game {
      *   as linhas do diff vão estar preenchidas com símbolos escolhidos através dos values, gerados pelo gerador "gen"
      *   o jogo vai ter de usar o elim(inator) e o acc(omodator) em todas as jogadas;
      */ 
-    
+
 
     private int r;
     private int c;
     private int diff;
     private Symbol empty;
     private Symbol[] values;
-    private Accomadator acc;
+    private Accomodator acc;
     private Eliminator elim;
     private Random gen;
+
+    private PlayArea area;
 
 
 
@@ -34,6 +36,11 @@ public abstract class AbstractGame implements Game {
        
     }
 
+    public AbstractGame(PlayArea area) {
+
+        this.area = area;
+    }
+
     public int linesInGrid(){
         return r;
         
@@ -42,25 +49,25 @@ public abstract class AbstractGame implements Game {
         return c;
     }
     @Override
-	void permutatePiece(int n){
+	public void permutatePiece(int n){
         Piece pref = new Piece(gen, Game.SIZE_OF_PIECE, empty, values);
         pref.permutation(n);
 
     }
     @Override
-    void placePiece(int col) {
+    public void placePiece(int col) {
         Piece pref = new Piece(gen, Game.SIZE_OF_PIECE, empty, values);
         Piece a = pref.copy();    
         
     }	 
     @Override
-    void generatePiece() {
+    public void generatePiece() {
         /* Generate como? da mesma maneira q a fase 2? */
         
 
 
     }
-    boolean finished(){
+    public boolean finished(){
         boolean fin=false;
     /* devolve true se	não	existe	nenhuma	coluna	 onde ainda	caiba uma peça; */
         for(int i=0;i<c;i++){
@@ -81,7 +88,7 @@ public abstract class AbstractGame implements Game {
         return fin;
     }
     
-    int spaceInColumn(int col)	{  
+    public int spaceInColumn(int col)	{  
         int open = 0;
             for(int e=0;e<r;e++){
                 /* 
@@ -94,13 +101,13 @@ public abstract class AbstractGame implements Game {
 
 
     } 	 
-    String currentPiece(){
+    public String currentPiece(){
         Piece p = new Piece(values);
         String a = p.toString();
         return a;
     }
 
-    String toString(){
+    public String toString(){
         return SingleScoreGame.toString;
         /* devolve a representação textual deste jogo; */
 
