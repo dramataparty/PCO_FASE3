@@ -37,11 +37,6 @@ public abstract class AbstractGame implements Game {
        
     }
 
-    public AbstractGame(PlayArea area) {
-
-        this.area = area;
-    }
-
     public int linesInGrid(){
         return r;
         
