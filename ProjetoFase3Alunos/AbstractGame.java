@@ -73,11 +73,10 @@ public abstract class AbstractGame implements Game {
         for(int i=0;i<c;i++){
             int open = 0;
             for(int e=0;e<r;e++){
-                /* 
-                if (#gamegrid[i][e] == EMPTY){
+                if (this.area[i][e] == Symbol.EMPTY){
                     open++;
                 }
-                */
+                
 
             }
             if(open<SIZE_OF_PIECE){
@@ -91,13 +90,13 @@ public abstract class AbstractGame implements Game {
     public int spaceInColumn(int col)	{  
         int open = 0;
             for(int e=0;e<r;e++){
-                /* 
-                if (#gamegrid[col][e] == EMPTY){
+                
+                if (this.area[col][e] == Symbol.EMPTY){
                     open++;
                 }
-                */
+                
             }           
-        return fin;
+        return open;
 
 
     } 	 
