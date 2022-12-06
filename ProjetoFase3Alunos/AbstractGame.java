@@ -33,6 +33,7 @@ public abstract class AbstractGame implements Game {
         this.acc=acc;
         this.elim = elim;
         this.gen = gen;
+        this.area = new PlayArea(r, c, diff, empty, values, gen, elim,acc);
        
     }
 
