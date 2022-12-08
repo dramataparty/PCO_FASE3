@@ -19,10 +19,14 @@ public class SingleScoreGame extends AbstractGame{
         return score;
     }
     public String toString() {
+        
 
 
         /* representação textual deste jogo, com o score */
     }
+
+
+
     public boolean finished(){
         boolean fin = false;
         for(int i =0; i < PlayArea.currentGrid.length; i++){
