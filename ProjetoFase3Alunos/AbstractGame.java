@@ -59,15 +59,13 @@ public abstract class AbstractGame implements Game {
     }	 
     @Override
     public void generatePiece() {
-
-        /* Generate como? da mesma maneira q a fase 2? */
-
-        
-
+        Piece np = new Piece(gen, SIZE_OF_PIECE, empty, values);
+        this.piece = np;
+                
 
     }
     public boolean finished(){
-        boolean fin= not(area.hasEnoughSpace(Game.SIZE_OF_PIECE));
+        boolean fin= !(area.hasEnoughSpace(Game.SIZE_OF_PIECE));
     /* devolve true se	não	existe	nenhuma	coluna	 onde ainda	caiba uma peça; */
     
         return fin;
