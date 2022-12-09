@@ -37,9 +37,12 @@ public class MultipleRewardGame extends AbstractGame{
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
          * pontuação igual à fase2
          */
+    
     }
 
     public int score() {
+        SingleScoreGame s = new SingleScoreGame();
+        return s.score;
         /* devolve a pontuação atual do jogo */
     }
     String toString() {
