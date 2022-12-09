@@ -53,12 +53,14 @@ public abstract class AbstractGame implements Game {
     @Override
     public void placePiece(int col) {
         Piece pref = new Piece(gen, Game.SIZE_OF_PIECE, empty, values);
-        Piece a = pref.copy();    
+        area.placePiece(pref,col); 
         
     }	 
     @Override
     public void generatePiece() {
+
         /* Generate como? da mesma maneira q a fase 2? */
+
         
 
 
@@ -69,7 +71,7 @@ public abstract class AbstractGame implements Game {
         for(int i=0;i<c;i++){
             int open = 0;
             for(int e=0;e<r;e++){
-                if (this.area[i][e] == Symbol.EMPTY){
+                if (this.area[i][e] == area.empty){
                     open++;
                 }
                 
@@ -87,7 +89,7 @@ public abstract class AbstractGame implements Game {
         int open = 0;
             for(int e=0;e<r;e++){
                 
-                if (this.area[col][e] == Symbol.EMPTY){
+                if (this.area.obtainColumn(col)[e] == area.empty){
                     open++;
                 }
                 
@@ -103,7 +105,8 @@ public abstract class AbstractGame implements Game {
     }
 
     public String toString(){
-        return SingleScoreGame.toString;
+        SingleScoreGame s = new SingleScoreGame();
+        return s.toString();
         /* devolve a representação textual deste jogo; */
 
 
