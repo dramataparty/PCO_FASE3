@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.lang.Boolean;
 
 
 
@@ -66,35 +67,14 @@ public abstract class AbstractGame implements Game {
 
     }
     public boolean finished(){
-        boolean fin=false;
+        boolean fin= not(area.hasEnoughSpace(Game.SIZE_OF_PIECE));
     /* devolve true se	não	existe	nenhuma	coluna	 onde ainda	caiba uma peça; */
-        for(int i=0;i<c;i++){
-            int open = 0;
-            for(int e=0;e<r;e++){
-                if (this.area[i][e] == area.empty){
-                    open++;
-                }
-                
-
-            }
-            if(open<SIZE_OF_PIECE){
-                fin=true;
-
-            }
-        }
+    
         return fin;
     }
     
-    public int spaceInColumn(int col)	{  
-        int open = 0;
-            for(int e=0;e<r;e++){
-                
-                if (this.area.obtainColumn(col)[e] == area.empty){
-                    open++;
-                }
-                
-            }           
-        return open;
+    public int spaceInColumn(int col)	{            
+        return this.area.spaceInColumn(col);
 
 
     } 	 
