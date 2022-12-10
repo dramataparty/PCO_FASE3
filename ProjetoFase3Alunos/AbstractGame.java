@@ -60,7 +60,6 @@ public abstract class AbstractGame implements Game {
     @Override
     public void generatePiece() {
         Piece np = new Piece(gen, SIZE_OF_PIECE, empty, values);
-        this.piece = np;
                 
 
     }
