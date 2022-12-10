@@ -46,6 +46,7 @@ public class MultipleRewardGame extends AbstractGame{
         /* devolve a pontuação atual do jogo */
     }
     String toString() {
+        
         /* representação textual deste jogo, com o score */
     }
 }
