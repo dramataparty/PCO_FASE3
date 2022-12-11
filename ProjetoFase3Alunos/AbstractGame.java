@@ -87,6 +87,6 @@ public abstract class AbstractGame implements Game {
         /* devolve a representação textual deste jogo; */
 
 
-    } 
+    }
 
 }

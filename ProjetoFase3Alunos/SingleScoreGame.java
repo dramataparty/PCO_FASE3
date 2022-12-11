@@ -1,19 +1,28 @@
 import java.util.List;
+import java.util.Random;
 
 public class SingleScoreGame extends AbstractGame{
     /*
      * instancias representam, cuja pontuação só contabiliza a realização das jogadas, (NÃO CONTAM ELMINAÇÕES )
      * só terminam quando a àrea do jogo está copletamente vazia
      */
-    int score;
+    private int score;
+
+    public SingleScoreGame(int r, int c, int diff, Symbol empty, Symbol[] values, Random gen, Eliminator elim, Accomodator acc){
+        /*
+         * inicializa nosso objeto "jogo"
+         */
+    
+        super(r, c, diff, empty, values, gen, elim, acc);
+    
+        }
 
     public void registerPlayScore(List<Integer> eliminated){
         /* Atualiza a pontuação do jogo com os resultados de uma jogada
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
          * a pontuação é calculada contabilizando somente a realização	das	jogadas	(não	conta	com	eliminações	feitas);
          */
-        for(int i =0 ; i<eleminated.length;i++){
-            
+        for(int i =0 ; i< eliminated.size();i++){
 
 
 
@@ -23,12 +32,6 @@ public class SingleScoreGame extends AbstractGame{
     public int score() {
         /* devolve a pontuação atual do jogo */
         return score;
-    }
-    public String toString() {
-        
-
-
-        /* representação textual deste jogo, com o score */
     }
 
 
@@ -45,5 +48,6 @@ vazia;*/
 
     /*que devolve	a	representação	textual	deste	jogo,	contendo	
     já	a	pontuação	(ver	outputs	fornecidos).*/
+    return super.toString();
     } 
 }

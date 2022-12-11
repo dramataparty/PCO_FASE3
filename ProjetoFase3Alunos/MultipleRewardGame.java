@@ -22,16 +22,10 @@ public class MultipleRewardGame extends AbstractGame{
      * inicializa nosso objeto "jogo"
      */
 
-    this.r = r;
-    this.c = c;
-    this.diff = diff;
-    this.empty = empty;
-    this.values = values;
-    this.gen = gen;
-    this.elim = elim;
-    this.acc = acc;
+    super(r, c, diff, empty, values, gen, elim, acc);
 
     }
+    @Override
     public void registerPlayScore(List<Integer> eliminated){
         /* Atualiza a pontuação do jogo com os resultados de uma jogada
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
@@ -40,13 +34,16 @@ public class MultipleRewardGame extends AbstractGame{
     
     }
 
+    @Override
     public int score() {
         SingleScoreGame s = new SingleScoreGame();
         return s.score;
         /* devolve a pontuação atual do jogo */
     }
-    String toString() {
+    @Override
+    public String toString() {
         
         /* representação textual deste jogo, com o score */
+        return super.toString();
     }
 }
