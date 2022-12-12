@@ -31,13 +31,22 @@ public class MultipleRewardGame extends AbstractGame{
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
          * pontuação igual à fase2
          */
+        for(int i =0; i<eliminated.length;i++){
+            if(eliminated[i]>=3){
+                /* o sitio q tem o score  += 200;*/
+                int expoints = (Game.SIZE_OF_PIECE - eliminated[i]) *10 ;
+                /* o sitio q tem o score  += expoints;*/
+
+            }
+
+        }
     
     }
 
     @Override
     public int score() {
         SingleScoreGame s = new SingleScoreGame();
-        return s.score;
+        return s.score();
         /* devolve a pontuação atual do jogo */
     }
     @Override
