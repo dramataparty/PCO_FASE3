@@ -23,7 +23,7 @@ public class PatternEliminator implements Eliminator {
             int e1count = 0;
             /* navega os padroes a eleminar, assume q têm a mesma length q um blocksize */
             for(int e = 0; e < i;e++){
-                if(this.patterns[e][i] == seq[e]){
+                if(this.patterns.get(e)[i] == seq[e]){
                     e1count++;
                 }
                 else{
@@ -35,14 +35,10 @@ public class PatternEliminator implements Eliminator {
                     seq[u]=nothing;
 
                 }
-            }
-                
-                return total_els;
-                
-                
+            }                           
+        }    
+}
+return total_els; 
+}
 
-        }
-        
-}
-}
 }

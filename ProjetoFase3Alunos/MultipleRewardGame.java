@@ -31,10 +31,10 @@ public class MultipleRewardGame extends AbstractGame{
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
          * pontuação igual à fase2
          */
-        for(int i =0; i<eliminated.length;i++){
-            if(eliminated[i]>=3){
+        for(int i =0; i<eliminated.size();i++){
+            if(eliminated.get(i)>=3){
                 /* o sitio q tem o score  += 200;*/
-                int expoints = (Game.SIZE_OF_PIECE - eliminated[i]) *10 ;
+                int expoints = (Game.SIZE_OF_PIECE - eliminated.get(i)) *10 ;
                 /* o sitio q tem o score  += expoints;*/
 
             }
@@ -53,6 +53,6 @@ public class MultipleRewardGame extends AbstractGame{
     public String toString() {
         
         /* representação textual deste jogo, com o score */
-        return super.toString();
+        return str(score()) +  super.toString();
     }
 }
