@@ -20,6 +20,7 @@ public abstract class AbstractGame implements Game {
     Eliminator elim;
     Random gen;
     PlayArea area;
+    Piece pref;
 
 
 
@@ -33,7 +34,6 @@ public abstract class AbstractGame implements Game {
         this.acc=acc;
         this.elim = elim;
         this.gen = gen;
-        this.area = new PlayArea(r, c, diff, empty, values, gen, elim,acc);
        
     }
 
@@ -46,19 +46,18 @@ public abstract class AbstractGame implements Game {
     }
     @Override
 	public void permutatePiece(int n){
-        Piece pref = new Piece(gen, Game.SIZE_OF_PIECE, empty, values);
+        
         pref.permutation(n);
 
     }
     @Override
     public void placePiece(int col) {
-        Piece pref = new Piece(gen, Game.SIZE_OF_PIECE, empty, values);
         area.placePiece(pref,col); 
         
     }	 
     @Override
     public void generatePiece() {
-        Piece np = new Piece(gen, SIZE_OF_PIECE, empty, values);
+        this.pref = new Piece(gen, SIZE_OF_PIECE, empty, values);
                 
 
     }
@@ -81,7 +80,12 @@ public abstract class AbstractGame implements Game {
     }
 
     public String toString(){
-        return area.currentGrid();/* devolve a representação textual deste jogo; */
+        
+
+        return area.currentGrid();
+        /* devolve a representação textual deste jogo; */
+
+
     }
 
    
