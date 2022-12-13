@@ -1,5 +1,5 @@
 import java.util.Random;
-import java.lang.Boolean;
+
 
 
 
@@ -74,9 +74,9 @@ public abstract class AbstractGame implements Game {
 
     } 	 
     public String currentPiece(){
-        Piece p = new Piece(values);
-        String a = p.toString();
-        return a;
+
+
+        return pref.toString();
     }
 
     public String toString(){

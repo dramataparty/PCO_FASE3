@@ -1,4 +1,4 @@
-import java.sql.SQLException;
+
 
 public class FatalFallAccomodator implements Accomodator {
 
