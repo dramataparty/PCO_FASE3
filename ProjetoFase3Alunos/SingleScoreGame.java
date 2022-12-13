@@ -27,7 +27,7 @@ public class SingleScoreGame extends AbstractGame{
         
 
          /* how the fuck?!?!?! */
-         
+
     }
 
     public int score() {
@@ -37,13 +37,12 @@ public class SingleScoreGame extends AbstractGame{
 
     
 
-    PlayArea p = new PlayArea(this.row,this.col,this.difi,this.emptier, this.vals, this.gener,this.elimi,this.accomo) ;
     
     
 
     public boolean finished(){
         
-        boolean infin = p.hasEnoughSpace(SIZE_OF_PIECE);
+        boolean infin = this.area.hasEnoughSpace(SIZE_OF_PIECE);
         boolean fin = !(infin);
         return fin;
         /*que	devolve	true se	a	área	de	jogo	está	completamente	
