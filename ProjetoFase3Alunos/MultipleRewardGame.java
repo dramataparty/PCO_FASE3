@@ -25,6 +25,8 @@ public class MultipleRewardGame extends AbstractGame{
     super(r, c, diff, empty, values, gen, elim, acc);
 
     }
+    SingleScoreGame s = new SingleScoreGame(r, c, diff, empty, values, gen, elim, acc);
+    public int score = s.score();
     @Override
     public void registerPlayScore(List<Integer> eliminated){
         /* Atualiza a pontuação do jogo com os resultados de uma jogada
@@ -33,9 +35,9 @@ public class MultipleRewardGame extends AbstractGame{
          */
         for(int i =0; i<eliminated.size();i++){
             if(eliminated.get(i)>=3){
-                /* o sitio q tem o score  += 200;*/
+                score += 200;
                 int expoints = (Game.SIZE_OF_PIECE - eliminated.get(i)) *10 ;
-                /* o sitio q tem o score  += expoints;*/
+                score  += expoints;
 
             }
 
@@ -45,14 +47,14 @@ public class MultipleRewardGame extends AbstractGame{
 
     @Override
     public int score() {
-        SingleScoreGame s = new SingleScoreGame();
-        return s.score();
+        
+        return score;
         /* devolve a pontuação atual do jogo */
     }
     @Override
     public String toString() {
         
         /* representação textual deste jogo, com o score */
-        return str(score()) +  super.toString();
+        return "Score: " + score()  +  super.toString();
     }
 }
