@@ -24,9 +24,15 @@ public class SingleScoreGame extends AbstractGame{
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
          * a pontuação é calculada contabilizando somente a realização	das	jogadas	(não	conta	com	eliminações	feitas);
          */
-        
+        for(int i =0; i<eliminated.size();i++){
+            if(eliminated.get(i)>=3){
+                score += 200;
+                int expoints = (Game.SIZE_OF_PIECE - eliminated.get(i)) *50 ;
+                score  += expoints;
 
-         /* how the fuck?!?!?! */
+            }
+
+        }
 
     }
 

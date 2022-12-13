@@ -29,6 +29,7 @@ public class MultipleRewardGame extends AbstractGame{
     public int score = s.score();
     @Override
     public void registerPlayScore(List<Integer> eliminated){
+        
         /* Atualiza a pontuação do jogo com os resultados de uma jogada
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
          * pontuação igual à fase2
@@ -36,7 +37,7 @@ public class MultipleRewardGame extends AbstractGame{
         for(int i =0; i<eliminated.size();i++){
             if(eliminated.get(i)>=3){
                 score += 200;
-                int expoints = (Game.SIZE_OF_PIECE - eliminated.get(i)) *10 ;
+                int expoints = (Game.SIZE_OF_PIECE - eliminated.get(i)) *50 ;
                 score  += expoints;
 
             }
