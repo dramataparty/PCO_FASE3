@@ -37,7 +37,7 @@ public class SingleScoreGame extends AbstractGame{
 
 
     public boolean finished(){
-        PlayArea p = new PlayArea(SIZE_OF_PIECE, score, SIZE_OF_PIECE, null, null, null, null, null);
+        PlayArea p = new PlayArea(super.linesInGrid(), super.colsInGrid(), diff,PlayArea.empty, Piece.symbols(), generator, Eliminator, Accomodator);
         boolean infin = p.hasEnoughSpace(SIZE_OF_PIECE);
         boolean fin = !(infin);
         return fin;
