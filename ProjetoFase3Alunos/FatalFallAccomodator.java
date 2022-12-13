@@ -3,10 +3,20 @@ import java.sql.SQLException;
 public class FatalFallAccomodator implements Accomodator {
 
     private int fatalHeight;
+    private ClassicalTransformer classic = new ClassicalTransformer();
 
     public FatalFallAccomodator(int fatalHeight){
-        this.fatalHeight = fatalHeight;
-        PlayArea.colsInGrid
+        /*
+         * deve ir buscar aos de cima qual o index do primeiro n vazio
+         * deve ir buscar o index do primeiro n vazio depois do anterior
+         * if int diferenca entre esses >= fatalheight
+         * todos os anteriores ao index final da acomodação ficam = EMPTY
+         */
+        
+        
+
+
+
             
         }
         
@@ -16,21 +26,8 @@ acomodação	deve provocar a “morte”	de	todos os símbolos “acima” dos q
 
     @Override
     public void accomodate(Symbol[] seq, Symbol nothing) {
-        for(int i=0;i<seq.length-1;i++){
-			if(seq[i]!=nothing&&seq[i+1]==nothing){
-				for(int e=seq.length-1;e>0;e--){
-					if(seq[e]!=nothing&seq[e-1]==nothing){
-						seq[e-1]=seq[i];
-						seq[i]=nothing;
 
-					}
-					
-				}
-
-			}
-		}
+        classic.accomodate(seq,nothing);
 	
-
-
     }
 }
