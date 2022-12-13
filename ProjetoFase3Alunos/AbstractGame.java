@@ -82,7 +82,9 @@ public abstract class AbstractGame implements Game {
     }
 
     public String toString(){
-        return SingleScoreGame().toString();
+        
+
+        return area.currentGrid();
         /* devolve a representação textual deste jogo; */
 
 
