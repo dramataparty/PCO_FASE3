@@ -17,6 +17,8 @@ public class SingleScoreGame extends AbstractGame{
     
         }
 
+
+
     public void registerPlayScore(List<Integer> eliminated){
         /* Atualiza a pontuação do jogo com os resultados de uma jogada
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
@@ -37,7 +39,7 @@ public class SingleScoreGame extends AbstractGame{
 
 
     public boolean finished(){
-        /*???*/PlayArea p = new PlayArea(r, c, diff, empty, values, gen, elim, acc);
+        PlayArea p = new PlayArea();
         boolean infin = p.hasEnoughSpace(SIZE_OF_PIECE);
         boolean fin = !(infin);
         return fin;
