@@ -82,8 +82,7 @@ public abstract class AbstractGame implements Game {
     }
 
     public String toString(){
-        SingleScoreGame s = new SingleScoreGame();
-        return s.toString();
+        return SingleScoreGame().toString();
         /* devolve a representação textual deste jogo; */
 
 
