@@ -90,4 +90,15 @@ public abstract class AbstractGame implements Game {
 
     }
 
+   
+        int difi = this.diff;
+        int row = this.r;
+        int col = this.c;
+        Random gener = this.gen;
+        Eliminator elimi = this.elim;
+        Accomodator accomo = this.acc;
+        Symbol emptier = this.empty;
+        Symbol[] vals = this.values;
+    
+
 }

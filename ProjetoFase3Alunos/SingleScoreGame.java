@@ -24,11 +24,10 @@ public class SingleScoreGame extends AbstractGame{
          * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
          * a pontuação é calculada contabilizando somente a realização	das	jogadas	(não	conta	com	eliminações	feitas);
          */
-        for(int i =0 ; i< eliminated.size();i++){
+        
 
-
-
-        }
+         /* how the fuck?!?!?! */
+         
     }
 
     public int score() {
@@ -36,10 +35,14 @@ public class SingleScoreGame extends AbstractGame{
         return score;
     }
 
+    
 
+    PlayArea p = new PlayArea(this.row,this.col,this.difi,this.emptier, this.vals, this.gener,this.elimi,this.accomo) ;
+    
+    
 
     public boolean finished(){
-        PlayArea p = new PlayArea();
+        
         boolean infin = p.hasEnoughSpace(SIZE_OF_PIECE);
         boolean fin = !(infin);
         return fin;
