@@ -18,6 +18,11 @@ public class PatternEliminator implements Eliminator {
         /* adaptar para percorrer os patterns */
         int i = 0, repetitions = 0;
 		Symbol symbolToVerify;
+        for(int e = 0; i<patterns.size();i++){
+            
+
+
+        }
 		int eliminated = 0;
 
 		while(i < seq.length && eliminated == 0){
@@ -30,7 +35,7 @@ public class PatternEliminator implements Eliminator {
 				repetitions++;
 			}
 
-			if(repetitions >= blockSize && symbolToVerify != nothing) {
+			if(symbolToVerify != nothing) {
 				eliminated = repetitions;
 
 				for(int j = i; j < k; j++)
