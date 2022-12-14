@@ -53,7 +53,7 @@ public abstract class AbstractGame implements Game {
     }
     @Override
     public void placePiece(int col) {
-        area.placePiece(pref,col); 
+        area.placePiece(pref,col-1); 
         
     }	 
     @Override
@@ -83,7 +83,7 @@ public abstract class AbstractGame implements Game {
     public String toString(){
         
 
-        return area.currentGrid();
+        return "Current Grid : \n " + area.currentGrid();
         /* devolve a representação textual deste jogo; */
 
 

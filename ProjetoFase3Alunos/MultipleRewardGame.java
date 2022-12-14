@@ -55,6 +55,6 @@ public class MultipleRewardGame extends AbstractGame{
     public String toString() {
         
         /* representação textual deste jogo, com o score */
-        return "Score: " + score()  +  super.toString();
+        return "Score: " + score() + "\n"  +  super.toString();
     }
 }

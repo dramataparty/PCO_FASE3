@@ -3,12 +3,20 @@
  * @author PCO Team
  */
 public enum Signs implements Symbol {
+	CROSS("+"),
+	CIRCLE("º"), 
+	BALL("~"), 
+	BANGS("‼️"), 
+	CANNOT("@"), 
+	EMPTY("-");
+	/* 
 	CROSS("❌"),
 	CIRCLE("⭕️"), 
 	BALL("🛑"), 
 	BANGS("‼️"), 
 	CANNOT("🚫"), 
 	EMPTY("❕");
+	*/
 	
 	private String rep;
 	Signs(String s) {

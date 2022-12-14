@@ -6,39 +6,43 @@ public class PatternEliminator implements Eliminator {
 
     PatternEliminator(List<Symbol[]> patterns){
         this.patterns=patterns;
-        /* ????? como assim cria um novo eliminator??? */
+
         
 
     }
 
+
     @Override
     public int eliminateSequence(Symbol[] seq, int blockSize, Symbol nothing){
-        /* arranjar referencia á length dos padroes a eleminar
-         * corrigir o "erro" do e1count no if
-         */
 
+        /* adaptar para percorrer os patterns */
+        int i = 0, repetitions = 0;
+		Symbol symbolToVerify;
+		int eliminated = 0;
 
-        int total_els = 0;
-        for(int i = 0; i<this.patterns.size() ; i++){
-            int e1count = 0;
-            /* navega os padroes a eleminar, assume q têm a mesma length q um blocksize */
-            for(int e = 0; e < i;e++){
-                if(this.patterns.get(e)[i] == seq[e]){
-                    e1count++;
-                }
-                else{
-                    e1count = 0;
-                }
-            total_els += e1count;
-            if (e1count >= 3){
-                for(int u = e; u>(u-e1count);u--){
-                    seq[u]=nothing;
+		while(i < seq.length && eliminated == 0){
+			repetitions = 0;
+			symbolToVerify = seq[i];
 
-                }
-            }                           
-        }    
+			int k = i;
+			while(k < seq.length && symbolToVerify == seq[k]){
+				k++;
+				repetitions++;
+			}
+
+			if(repetitions >= blockSize && symbolToVerify != nothing) {
+				eliminated = repetitions;
+
+				for(int j = i; j < k; j++)
+					seq[j] = nothing;
+			}
+
+			i = k;
+		}
+
+		return eliminated;      
+            
 }
-return total_els; 
-}
+
 
 }
