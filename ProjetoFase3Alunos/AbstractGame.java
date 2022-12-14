@@ -64,7 +64,7 @@ public abstract class AbstractGame implements Game {
     }
     public boolean finished(){
         boolean fin=!(area.hasEnoughSpace(Game.SIZE_OF_PIECE));
-    /* devolve true se	não	existe	nenhuma	coluna	 onde ainda	caiba uma peça; */
+    /* devolve true se	não	existe	nenhuma	coluna onde ainda	caiba uma peça; */
     
         return fin;
     }
