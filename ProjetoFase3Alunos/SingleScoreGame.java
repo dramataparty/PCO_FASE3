@@ -45,12 +45,11 @@ public class SingleScoreGame extends AbstractGame{
 
     
     
-
+    @Override
     public boolean finished(){
         
-        boolean infin = this.area.hasEnoughSpace(SIZE_OF_PIECE);
-        boolean fin = !(infin);
-        return fin;
+        
+        return super.finished();
         /*que	devolve	true se	a	área	de	jogo	está	completamente	
 vazia;*/
     } 
