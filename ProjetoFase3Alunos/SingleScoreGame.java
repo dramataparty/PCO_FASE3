@@ -1,29 +1,41 @@
+/**
+ * RepresentaÁ„o de uma extens„o da classe AbstractGame
+ *@author Diogo Forte n∫ 56931, Tiago Pereira n∫55854, Miguel Pinto n∫51600
+ */
 import java.util.List;
 import java.util.Random;
 
 public class SingleScoreGame extends AbstractGame{
-    /*
-     * instancias representam, cuja pontuação só contabiliza a realização das jogadas, (NÃO CONTAM ELMINAÇÕES )
-     * só terminam quando a àrea do jogo está copletamente vazia
-     */
+    
     private int score;
-
+    /**
+     * Construtor da classe SingleScoreGame.
+     * @param r
+     * @param c
+     * @param diff
+     * @param empty
+     * @param values
+     * @param gen
+     * @param elim
+     * @param acc
+     * @ensures InicializaÁ„o de todas as vari·veis no construtor.
+     */    
     public SingleScoreGame(int r, int c, int diff, Symbol empty, Symbol[] values, Random gen, Eliminator elim, Accomodator acc){
-        /*
-         * inicializa nosso objeto "jogo"
-         */
+       
     
         super(r, c, diff, empty, values, gen, elim, acc);
     
         }
 
 
-
+    /**
+     * FunÁ„o que atualiza a pontuaÁ„o dos jogos com os resultados de uma jogada.
+     * @param eliminated
+     * @requires eliminated != null
+     * @ensures Atualizar a pontuaÁ„o dos jogos.
+     */
     public void registerPlayScore(List<Integer> eliminated){
-        /* Atualiza a pontuação do jogo com os resultados de uma jogada
-         * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
-         * a pontuação é calculada contabilizando somente a realização	das	jogadas	(não	conta	com	eliminações	feitas);
-         */
+        
         for(int i =0; i<eliminated.size();i++){
             if(eliminated.get(i)>=3){
                 score += 200;
@@ -36,27 +48,38 @@ public class SingleScoreGame extends AbstractGame{
 
     }
 
+    /**
+     * FunÁ„o que devolve a pontuaÁ„o atual do jogo.
+     * @return pontuaÁ„o atual do jogo
+     * @ensures Devolver um valor int guardado com a pontuaÁ„o atual do jogo.
+     */
     public int score() {
-        /* devolve a pontuação atual do jogo */
+        
         return score;
     }
 
     
 
     
-    
+    /**
+     * FunÁ„o booleana que verifica se alguma coluna ainda tem espaÁo para uma peÁa.
+     * @return True se houver espaÁo para colocar uma peÁa ou False se n„o houver espaÁo para colocar uma peÁa
+     * @ensures Devolver True ou False.
+     */
     @Override
     public boolean finished(){
         
         
         return super.finished();
-        /*que	devolve	true se	a	área	de	jogo	está	completamente	
-vazia;*/
+       
     } 
+    /**
+     * FunÁ„o que devolve a representaÁ„o textual do SingleScoreGame.
+     * @return A representaÁ„o textual do SingleScoreGame
+     * @ensures Devolver a representaÁ„o textual do SingleScoreGame/jogo a decorrer.
+     */
     public String toString(){
 
-    /*que devolve	a	representação	textual	deste	jogo,	contendo	
-    já	a	pontuação	(ver	outputs	fornecidos).*/
     return super.toString();
     } 
 }

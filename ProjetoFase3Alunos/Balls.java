@@ -3,21 +3,15 @@
  * @author PCO Team
  */
 public enum Balls implements Symbol {
-	/*
+	
 	RED("🔴"),
 	ORANGE("🟠"), 
 	YELLOW("🟡"), 
 	GREEN("🟢"), 
 	BLUE("🔵"), 
 	EMPTY("⚪️");
-	*/
-	RED("!"),
-	ORANGE("@"), 
-	YELLOW("#"), 
-	GREEN("%"), 
-	BLUE("€"), 
-	EMPTY("-");
 	
+
 	
 	private String rep;
 	Balls(String s) {

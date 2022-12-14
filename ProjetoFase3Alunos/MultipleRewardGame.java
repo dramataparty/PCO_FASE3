@@ -1,7 +1,13 @@
+/**
+ * RepresentaÁ„o de uma extens„o da classe AbstractGame
+ *@author Diogo Forte n∫ 56931, Tiago Pereira n∫55854, Miguel Pinto n∫51600
+ */
 import java.util.List;
 import java.util.Random;
 
 public class MultipleRewardGame extends AbstractGame{
+
+
 
     private int r;
     private int c; 
@@ -12,27 +18,36 @@ public class MultipleRewardGame extends AbstractGame{
     private Eliminator elim; 
     private Accomodator acc;
 
-    /*
-     * instancias desta subclasse representam jogos, cuja pontuação é calculada da mesma maneira q na fase 2
-     * jogos terminam se n existir coluna em q caiba alguma peça
-     * 
-     */
+    /**
+     * Construtor da classe MultipleRewardGame.
+     * @param r
+     * @param c
+     * @param diff
+     * @param empty
+     * @param values
+     * @param gen
+     * @param elim
+     * @param acc
+     * @requires r != null, c != null, diff != null, empty != null, values != null, gen != null, elim != null, acc != null
+     * @ensures InicializaÁ„o de todas as vari·veis no construtor.
+     */    
     public MultipleRewardGame(int r, int c, int diff, Symbol empty, Symbol[] values, Random gen, Eliminator elim, Accomodator acc){
-    /*
-     * inicializa nosso objeto "jogo"
-     */
+    
 
     super(r, c, diff, empty, values, gen, elim, acc);
 
     }
+    /**
+     * FunÁ„o que atualiza a pontuaÁ„o dos jogos com os resultados de uma jogada.
+     * @param eliminated
+     * @requires eliminated != null
+     * @ensures Atualizar a pontuaÁ„o dos jogos.
+     */
     public int score;
     @Override
     public void registerPlayScore(List<Integer> eliminated){
         
-        /* Atualiza a pontuação do jogo com os resultados de uma jogada
-         * a lista eleminated vai conter o nº de simbolos que foram eleminados em varias fases da jogada
-         * pontuação igual à fase2
-         */
+        
         for(int i =0; i<eliminated.size();i++){
             if(eliminated.get(i)>=3){
                 score += 200;
@@ -44,17 +59,26 @@ public class MultipleRewardGame extends AbstractGame{
         }
     
     }
-
+    /**
+     * FunÁ„o que devolve a pontuaÁ„o atual do jogo.
+     * @return pontuaÁ„o atual do jogo
+     * @ensures Devolver um valor int guardado com a pontuaÁ„o atual do jogo.
+     */
     @Override
     public int score() {
         
         return score;
-        /* devolve a pontuação atual do jogo */
+        
     }
+    /**
+     * FunÁ„o que devolve a representaÁ„o textual do MultipleRewardGame.
+     * @return A representaÁ„o textual do MultipleRewardGame
+     * @ensures Devolver a representaÁ„o textual do MultipleRewardGame/jogo a decorrer.
+     */
     @Override
     public String toString() {
         
-        /* representação textual deste jogo, com o score */
+        
         return "Score: " + score() + "\n"  +  super.toString();
     }
 }
