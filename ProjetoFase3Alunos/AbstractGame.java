@@ -19,7 +19,7 @@ public abstract class AbstractGame implements Game {
     private Accomodator acc;
     private Eliminator elim;
     private Random gen;
-    public PlayArea area;
+    private PlayArea area;
     private Piece pref;
 
 

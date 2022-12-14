@@ -25,8 +25,7 @@ public class MultipleRewardGame extends AbstractGame{
     super(r, c, diff, empty, values, gen, elim, acc);
 
     }
-    SingleScoreGame s = new SingleScoreGame(r, c, diff, empty, values, gen, elim, acc);
-    public int score = s.score();
+    public int score;
     @Override
     public void registerPlayScore(List<Integer> eliminated){
         
