@@ -11,16 +11,16 @@ public abstract class AbstractGame implements Game {
      */ 
 
 
-    int r;
-    int c;
-    int diff;
-    Symbol empty;
-    Symbol[] values;
-    Accomodator acc;
-    Eliminator elim;
-    Random gen;
-    PlayArea area;
-    Piece pref;
+    private int r;
+    private int c;
+    private int diff;
+    private Symbol empty;
+    private Symbol[] values;
+    private Accomodator acc;
+    private Eliminator elim;
+    private Random gen;
+    public PlayArea area;
+    private Piece pref;
 
 
 
@@ -34,6 +34,7 @@ public abstract class AbstractGame implements Game {
         this.acc=acc;
         this.elim = elim;
         this.gen = gen;
+        this.area= new PlayArea(r, c, diff, empty, values, gen, elim, acc);
        
     }
 
